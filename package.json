@@ -1,7 +1,7 @@
 {
   "name": "ts-transformer-lodash-import",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Rewrite lodash imports in TypeScript files.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
