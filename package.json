@@ -1,0 +1,62 @@
+{
+  "name": "ts-transformer-lodash-import",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "npm run build -- --watch",
+    "lint": "eslint . --ext .js,.ts",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tommy351/ts-transformer-lodash-import.git"
+  },
+  "keywords": [
+    "typescript",
+    "lodash",
+    "transform"
+  ],
+  "author": "Tommy Chen <tommy351@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tommy351/ts-transformer-lodash-import/issues"
+  },
+  "homepage": "https://github.com/tommy351/ts-transformer-lodash-import#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --fix"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "tslib": "^1.14.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.168",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.7",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.5"
+  },
+  "peerDependencies": {
+    "lodash": "*",
+    "typescript": "*"
+  }
+}
