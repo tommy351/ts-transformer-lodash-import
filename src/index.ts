@@ -3,9 +3,13 @@ import lodash from "lodash";
 
 const lodashMethods = Object.keys(lodash);
 
+export interface PluginOptions {
+  appendExtension?: boolean;
+}
+
 export default function (
   program: ts.Program,
-  pluginOptions: unknown
+  pluginOptions: PluginOptions
 ): ts.TransformerFactory<ts.SourceFile> {
   return (ctx: ts.TransformationContext) => {
     const visitor: ts.Visitor = (node) => {
@@ -52,11 +56,17 @@ export default function (
                 return ts.factory.createImportClause(false, name, undefined);
               })();
 
+              let moduleSpecifier = `lodash/${nameText}`;
+
+              if (pluginOptions.appendExtension) {
+                moduleSpecifier += ".js";
+              }
+
               return ts.factory.createImportDeclaration(
                 node.decorators,
                 node.modifiers,
                 importClause,
-                ts.factory.createStringLiteral(`lodash/${nameText}`)
+                ts.factory.createStringLiteral(moduleSpecifier)
               );
             });
           }

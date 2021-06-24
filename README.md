@@ -22,6 +22,12 @@ Use with [ttypescript](https://github.com/cevek/ttypescript).
 }
 ```
 
+Available options:
+
+| Name              | Description                              | Type      | Default |
+| ----------------- | ---------------------------------------- | --------- | ------- |
+| `appendExtension` | Append `.js` extension to lodash import. | `boolean` | `false` |
+
 ## License
 
 MIT
